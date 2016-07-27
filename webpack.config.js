@@ -1,23 +1,25 @@
 module.exports = {
-    entry: './index.js',
+  entry: './index.js',
 
-    output: {
-        filename: 'bundle.js',
-        publicPath: ''
-    },
+  output: {
+    filename: 'bundle.js',
+    publicPath: ''
+  },
 
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015', 'react'],
-            }
-        }]
-    },
+  devtool: 'cheap-module-eval-source-map',
 
-    devServer: {
-        port: 8000
-    }
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'react', 'stage-2'],
+      }
+    }]
+  },
+
+  devServer: {
+    port: 8000
+  }
 }
