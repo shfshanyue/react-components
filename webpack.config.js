@@ -21,5 +21,9 @@ module.exports = {
 
   devServer: {
     port: 8000
-  }
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
