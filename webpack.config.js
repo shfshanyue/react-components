@@ -1,23 +1,24 @@
 const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
-  entry: './index.js',
+  entry: {
+    app: './index.js'
+  },
 
   output: {
-    filename: 'bundle.js',
-    publicPath: ''
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/public'
   },
 
   devtool: 'cheap-module-eval-source-map',
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['es2015', 'react', 'stage-2'],
-      }
+      loader: 'babel-loader'
     }]
   },
 
