@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --content-base .",
-    "build": "webpack -v"
+    "build": "rm -rf public && NODE_ENV=production webpack"
   },
   "author": "",
   "license": "ISC",

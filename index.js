@@ -3,6 +3,6 @@ import { render } from 'react-dom'
 
 import App from './components/App'
 
-render((
-  <App></App>
-), document.getElementById('app'))
+render(
+  <App />
+, document.getElementById('app'))
