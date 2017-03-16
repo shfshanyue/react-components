@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -7,9 +8,9 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].[id].[chunkhash:5].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
-    publicPath: '/public'
+    publicPath: '/'
   },
 
   devtool: 'cheap-module-eval-source-map',
@@ -27,12 +28,17 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: 'body'
+    })
   ]
 }
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = 'source-map'
+  module.exports.output.filename = '[name].[id].[chunkhash:5].js',
   module.exports.plugins = [
     new webpack.DefinePlugin({
       'process.env': {
@@ -50,6 +56,12 @@ if (process.env.NODE_ENV === 'production') {
         comments: false
       },
       sourcemap: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html',
+      inject: 'body',
+      chunksSortMode: 'dependency'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
