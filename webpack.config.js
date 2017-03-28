@@ -20,6 +20,9 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
+    }, {
+      test: /\.css$/,
+      loader: [ 'style-loader?insertAt=top', 'css-loader' ]
     }]
   },
 
@@ -55,7 +58,7 @@ if (process.env.NODE_ENV === 'production') {
         screw_ie8: true,
         comments: false
       },
-      sourcemap: false
+      sourceMap: false
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
