@@ -22,7 +22,24 @@ module.exports = {
       loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loader: [ 'style-loader?insertAt=top', 'css-loader' ]
+      use: [
+        {
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            importLoaders: 1,
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: 'inline',
+          }
+        }
+      ] 
     }]
   },
 
