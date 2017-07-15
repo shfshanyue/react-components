@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Player from './components/Player'
+import Ring from './Ring'
 
 class App extends Component {
 
@@ -8,8 +9,7 @@ class App extends Component {
     const src = 'http://hq-static.smartstudy.com/media/voice/j4idx9jy_276_oTH2XbIPdWzuuR8CEqxURdhO7sIpDTgA.mp3'
     return (
       <div>
-        <Player autoplay={true} width={74} src={src} />
-        <Player autoplay={true} width={74} src={src} />
+        <Ring />
       </div>
     )
   }
