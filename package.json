@@ -12,10 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@storybook/addon-knobs": "^3.1.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "@storybook/react": "^3.1.8",
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.0",
@@ -29,7 +31,6 @@
     "precss": "^1.4.0",
     "style-loader": "^0.16.0",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1",
-    "@storybook/react": "^3.1.8"
+    "webpack-dev-server": "^2.4.1"
   }
 }

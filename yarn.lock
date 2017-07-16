@@ -13,6 +13,22 @@
     react-inspector "^2.1.1"
     uuid "^3.1.0"
 
+"@storybook/addon-knobs@^3.1.8":
+  version "3.1.8"
+  resolved "http://registry.npm.taobao.org/@storybook/addon-knobs/download/@storybook/addon-knobs-3.1.8.tgz#665954395e495fdf31e34f75433e1b8ec2781c2e"
+  dependencies:
+    "@storybook/addons" "^3.1.6"
+    babel-runtime "^6.23.0"
+    deep-equal "^1.0.1"
+    global "^4.3.2"
+    insert-css "^1.0.0"
+    lodash.debounce "^4.0.8"
+    moment "^2.18.1"
+    prop-types "^15.5.8"
+    react-color "^2.11.4"
+    react-datetime "^2.8.10"
+    react-textarea-autosize "^4.3.0"
+
 "@storybook/addon-links@^3.1.6":
   version "3.1.6"
   resolved "http://registry.npm.taobao.org/@storybook/addon-links/download/@storybook/addon-links-3.1.6.tgz#62c8a839e54ff0adb04c6023dae467b336ced5d9"
@@ -2085,7 +2101,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2:
     create-hash "^1.1.0"
     inherits "^2.0.1"
 
-create-react-class@^15.5.2:
+create-react-class@^15.5.2, create-react-class@^15.5.x:
   version "15.6.0"
   resolved "http://registry.npm.taobao.org/create-react-class/download/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
   dependencies:
@@ -3322,6 +3338,10 @@ inline-style-prefixer@^3.0.6:
     bowser "^1.6.0"
     css-in-js-utils "^1.0.3"
 
+insert-css@^1.0.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/insert-css/download/insert-css-1.1.0.tgz#4a3f7a3e783877381bb8471a6452d1d27315db9e"
+
 interpret@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.2.tgz#f4f623f0bb7122f15f5717c8e254b8161b5c5b2d"
@@ -3660,6 +3680,10 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "http://registry.npm.taobao.org/lodash.debounce/download/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "http://registry.npm.taobao.org/lodash.isarguments/download/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -3692,7 +3716,7 @@ lodash.uniq@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x.x, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.2.1:
+lodash@4.x.x, lodash@^4.0.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3727,6 +3751,10 @@ mantra-core@^1.7.0:
     babel-runtime "6.x.x"
     react-komposer "^1.9.0"
     react-simple-di "^1.2.0"
+
+material-colors@^1.2.1:
+  version "1.2.5"
+  resolved "http://registry.npm.taobao.org/material-colors/download/material-colors-1.2.5.tgz#5292593e6754cb1bcc2b98030e4e0d6a3afc9ea1"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.16"
@@ -3827,6 +3855,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
 mobx@^2.3.4:
   version "2.7.0"
   resolved "http://registry.npm.taobao.org/mobx/download/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
+
+moment@^2.18.1:
+  version "2.18.1"
+  resolved "http://registry.npm.taobao.org/moment/download/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 ms@0.7.1:
   version "0.7.1"
@@ -3976,6 +4008,10 @@ number-is-nan@^1.0.0:
 oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
+
+object-assign@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/object-assign/download/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
 
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
@@ -4769,6 +4805,25 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-color@^2.11.4:
+  version "2.13.1"
+  resolved "http://registry.npm.taobao.org/react-color/download/react-color-2.13.1.tgz#8ea05094b7cd1a57f900d1c210b88132e72d460f"
+  dependencies:
+    lodash "^4.0.1"
+    material-colors "^1.2.1"
+    prop-types "^15.5.4"
+    reactcss "^1.2.0"
+    tinycolor2 "^1.1.2"
+
+react-datetime@^2.8.10:
+  version "2.8.10"
+  resolved "http://registry.npm.taobao.org/react-datetime/download/react-datetime-2.8.10.tgz#06d4317b7734310e0e8109555526656128346132"
+  dependencies:
+    create-react-class "^15.5.2"
+    object-assign "^3.0.0"
+    prop-types "^15.5.7"
+    react-onclickoutside "^5.9.0"
+
 react-docgen@^2.15.0:
   version "2.16.0"
   resolved "http://registry.npm.taobao.org/react-docgen/download/react-docgen-2.16.0.tgz#03c9eba935de8031d791ab62657b7b6606ec5da6"
@@ -4837,6 +4892,12 @@ react-modal@^1.7.6, react-modal@^1.7.7:
     prop-types "^15.5.7"
     react-dom-factories "^1.0.0"
 
+react-onclickoutside@^5.9.0:
+  version "5.11.1"
+  resolved "http://registry.npm.taobao.org/react-onclickoutside/download/react-onclickoutside-5.11.1.tgz#00314e52567cf55faba94cabbacd119619070623"
+  dependencies:
+    create-react-class "^15.5.x"
+
 react-simple-di@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/react-simple-di/download/react-simple-di-1.2.0.tgz#dde0e5bf689f391ef2ab02c9043b213fe239c6d0"
@@ -4864,6 +4925,12 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
+react-textarea-autosize@^4.3.0:
+  version "4.3.2"
+  resolved "http://registry.npm.taobao.org/react-textarea-autosize/download/react-textarea-autosize-4.3.2.tgz#962a52c68caceae408c18acecec29049b81e42fa"
+  dependencies:
+    prop-types "^15.5.8"
+
 react@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
@@ -4871,6 +4938,12 @@ react@^15.4.2:
     fbjs "^0.8.4"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+
+reactcss@^1.2.0:
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/reactcss/download/reactcss-1.2.2.tgz#41b0ef43e01d54880357c34b11ac1531209350ef"
+  dependencies:
+    lodash "^4.0.1"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -5527,6 +5600,10 @@ timers-browserify@^2.0.2:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.2.tgz#ab4883cf597dcd50af211349a00fbca56ac86b86"
   dependencies:
     setimmediate "^1.0.4"
+
+tinycolor2@^1.1.2:
+  version "1.4.1"
+  resolved "http://registry.npm.taobao.org/tinycolor2/download/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"

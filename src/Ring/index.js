@@ -15,7 +15,7 @@ class Ring extends Component {
     theme: '#eee',
     radius: 60,
     ringWidth: 8,
-    percent: 10
+    percent: 0
   }
 
   constructor (props) {
@@ -62,13 +62,13 @@ class Ring extends Component {
     const { radius, ringWidth, children } = this.props
 
     return (
-      <div style={{ width: radius * 2, height: radius * 2 }} className="ring">
+      <div style={{ width: this.width, height: this.width }} className="ring">
         <canvas
           ref={el => this.canvas = el}
           width={this.width}
           height={this.width}
         />
-        { children && <div className="children">{ children }</div> }
+        { children && <div className="ring-children">{ children }</div> }
       </div>
     );
   }
