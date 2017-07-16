@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 import { withKnobs, text, boolean, number, color } from '@storybook/addon-knobs'
 
-import Ring from '../src/Ring'
+import Ring from '../components/Ring'
 
 addDecorator(withKnobs)
 
@@ -44,4 +44,5 @@ storiesOf('Ring', module)
       </Ring>
     )
   })
+
 

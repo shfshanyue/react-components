@@ -1,5 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react'
-import './player.css'
+import './index.css'
 
 class Player extends PureComponent {
   static propTypes = {
