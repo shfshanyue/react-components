@@ -19,10 +19,11 @@ storiesOf('Ring', module)
       max: 100,
       step: 1
     })
+    const width = number('Width', 146)
     const ringWidth = number('RingWidth', 8)
     const theme = color('Theme', '#eee')
     const _color = color('Color', '#fa8c35')
-    return <Ring percent={percent} theme={theme} color={_color} ringWidth={ringWidth} />
+    return <Ring percent={percent} theme={theme} color={_color} ringWidth={ringWidth} width={width} />
   })
   .add('with content', () => {
     const percent = number('Percent', 60, {

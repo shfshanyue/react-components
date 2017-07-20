@@ -3,6 +3,7 @@ import './index.css'
 
 class Ring extends Component {
   static propTypes = {
+    width: PropTypes.number,
     radius: PropTypes.number.isRequired,
     ringWidth: PropTypes.number.isRequired,
     percent: PropTypes.number.isRequired,
