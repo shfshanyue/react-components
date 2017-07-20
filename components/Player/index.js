@@ -1,98 +1,78 @@
 import React, { PureComponent, PropTypes } from 'react'
-import './index.css'
 
 class Player extends PureComponent {
   static propTypes = {
-    width: PropTypes.number,
+    src: PropTypes.string.isRequired,
     start: PropTypes.number,
     end: PropTypes.number,
     paused: PropTypes.bool,
-    onChange: PropTypes.func,
-    timeupdate: PropTypes.func,
-    src: PropTypes.string.isRequired,
-    autoplay: PropTypes.bool.isRequired,   // 主要被未受控组件使用
+    onEnded: PropTypes.func,
+    onTimeUpdate: PropTypes.func,
+    onError: PropTypes.func,
+    onData: PropTypes.func              // loadedmetadata event
   }
 
   static defaultProps = {
-    autoplay: false
+    paused: true 
   }
 
   constructor (prop) {
     super(prop) 
-    this.controled = prop.paused !== undefined
 
-    this.state = {
-      paused: this.controled ? prop.paused : !prop.autoplay,
-      progress: 0
-    }
-
-    this.handleToggleStatus = this.handleToggleStatus.bind(this)
+    this.handleTimeUpdate = this.handleTimeUpdate.bind(this)
+    this.handleEnd = this.handleEnd.bind(this)
+    this.handleError = this.handleError.bind(this)
   }
 
   componentDidMount () {
+    const { onData } = this.props
+
     this.audio = new Audio(this.props.src)
 
-    this.handleEvents()
-    this.checkAudioStatus()
-  }
-
-  componentWillReciveProps (props, state) {
-    if (props.paused !== this.props.paused) {
-      this.setState({ paused: props.paused }) 
-    }
+    this.audio.addEventListener('timeupdate', this.handleTimeUpdate)     
+    this.audio.addEventListener('ended', this.handleEnd)     
+    this.audio.addEventListener('error', this.handleError)
+    this.audio.addEventListener('loadedmetadata', () => {
+      onData && onData({ duration: this.audio.duration }) 
+    }, { once: true })
+    this.audio.addEventListener('canplaythrough', () => {
+      this.checkAudioStatus()
+    })
   }
 
   componentDidUpdate () {
     this.checkAudioStatus()
   }
 
-  handleToggleStatus () {
-    const { onChange } = this.props
-    if (this.props.paused !== undefined) {
-      onChange && onChange()
-      return
-    }
-
-    const { paused } = this.state
-    this.setState({ paused: !paused }) 
-    onChange && onChange()
+  componentWillUnmount () {
+    this.audio.removeEventListener('timeupdate', this.handleTimeUpdate)     
+    this.audio.removeEventListener('ended', this.handleEnd)     
+    this.audio.removeEventListener('error', this.handleError)
   }
 
-  handleEvents () {
-    const audio = this.audio
-    const { start, end, timeupdate, ended } = this.props
+  handleTimeUpdate (e) {
+    const { onTimeUpdate } = this.props
+    onTimeUpdate && onTimeUpdate(e.target.currentTime)
+  }
 
-    audio.addEventListener('timeupdate', (e) => {
-      timeupdate && timeupdate()
-    })
-    audio.addEventListener('ended', (e) => {
-      ended && ended()
-      this.handleToggleStatus()
-    })
+  handleEnd () {
+    const { onEnded } = this.props
+    onEnded && onEnded()
+  }
+
+  handleError (e) {
+    const { onError } = this.props
+    onError && onError(e.target.error.message)
   }
 
   checkAudioStatus () {
-    this.state.paused ? this.audio.pause() : this.audio.play()
+    this.props.paused ? this.audio.pause() : this.audio.play()
   }
 
   render () {
-    const { width } = this.props
-    const { paused } = this.state
-
-    // 如果在播放状态中，播放按钮为暂停样式
-    const btnClass = `player-btn ${paused ? 'play' : 'pause'}`
-
-    return (
-      <div className="player" style={{ width: `${width}px`, height: `${width}px` }}>
-        <div className="player-ring">
-          <div
-            className={btnClass}
-            onClick={this.handleToggleStatus}
-          />
-        </div>
-      </div>
-    ) 
+    return this.props.children || null
   }
 }
 
 export default Player
+
