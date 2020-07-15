@@ -12,7 +12,7 @@ class Ring extends Component {
   }
 
   static defaultProps = {
-    color: '#ffa400',
+    color: '#7bea58',
     theme: '#eee',
     radius: 60,
     ringWidth: 8,

@@ -7,6 +7,7 @@ import { withKnobs, text, boolean, number, color } from '@storybook/addon-knobs'
 
 import Ring from '../components/Ring'
 import Player from '../components/Player'
+import RingPlayer from '../components/RingPlayer'
 
 addDecorator(withKnobs)
 
@@ -84,5 +85,15 @@ storiesOf('Player', module)
           { paused ? '>' : '| |' }
         </div>
       </Player>
+    )
+  })
+
+storiesOf('RingPlayer', module)
+  .add('with default', () => {
+    const src = 'http://hq-static.smartstudy.com/media/voice/j4idx9jy_276_oTH2XbIPdWzuuR8CEqxURdhO7sIpDTgA.mp3'
+    const paused = boolean('Paused', true)
+
+    return (
+      <RingPlayer src={src} paused={paused} onChange={action('ChangePaused')} />
     )
   })

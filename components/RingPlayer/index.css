@@ -1,0 +1,43 @@
+.ring-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid #DCDCDC;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 rgba(195,195,195,0.60);
+  box-sizing: border-box;
+}
+
+.ring-player-btn {
+  cursor: pointer;
+}
+
+.ring-player-btn.play {
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #7bea58;
+}
+
+.ring-player-btn.pause {
+  height: 20px;
+}
+
+.ring-player-btn.pause::before {
+  display: inline-block;
+  content: "";
+  width: 6px;
+  height: 20px;
+  background-color: #7bea58;
+}
+
+.ring-player-btn.pause::after {
+  display: inline-block;
+  content: "";
+  width: 6px;
+  height: 20px;
+  margin-left: 4px;
+  background-color: #7bea58;
+}
